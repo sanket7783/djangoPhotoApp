@@ -7,6 +7,7 @@ class photos(models.Model):
     caption = models.TextField()
     photo = models.ImageField(upload_to='images/')
     user = models.ForeignKey(User,on_delete=models.CASCADE)
+    draft = models.BooleanField(default=False)
 
     def __str__(self) :
         return self.caption
