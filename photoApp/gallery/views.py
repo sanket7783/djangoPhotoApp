@@ -26,7 +26,7 @@ class ImageList(generics.ListAPIView):
     queryset = photos.objects.all()
     serializer_class = GallerySerializer
     filter_backends = [DjangoFilterBackend,filters.OrderingFilter]
-    filterset_fields = ['user']
+    filterset_fields = ['user','draft']
     ordering_filters = ['published_date']
 
 class Image(generics.RetrieveUpdateDestroyAPIView):
